@@ -129,6 +129,7 @@ body {
 }
 
 .form-select {
+  background-color: #fff;
   padding-right: 2rem;
   width: 20rem;
   /* pr enlever la fleche standard et mettre notre icon */
@@ -231,6 +232,8 @@ body {
 }
 
 button,
+.add--form select,
+.actions select,
 select,
 input {
   color: #fff;
@@ -243,6 +246,7 @@ input {
   font-size: 1.8rem;
   cursor: pointer;
 }
+
 .add--form input {
   flex: 1;
 }
@@ -515,7 +519,7 @@ input[type="checkbox"] {
   .logo img {
     height: 8rem;
     padding-right: 2rem;
-    margin: 1rem 0;
+    margin: 0;
   }
   .deco-grid {
     width: 90%;
@@ -523,7 +527,7 @@ input[type="checkbox"] {
   }
   .table {
     margin: 0;
-    height: 6rem;
+    height: 7rem;
   }
   .cake {
     width: 40%;
