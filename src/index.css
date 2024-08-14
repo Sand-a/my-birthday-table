@@ -1,13 +1,589 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* general */
+/* ------- */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2.4rem;
+  font-family: sans-serif;
+  color: #fff;
+  font-family: "roboto";
+  font-weight: 500;
+}
+.container {
+  margin: 0 auto;
+  max-width: 140rem;
+}
+
+/* APP grid structure */
+/* ------------------ */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+.deco-section {
+  grid-column: 1 / span 2;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+/* logo */
+/* ---- */
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 3rem 6rem;
+}
+.logo img {
+  height: 15rem;
+  padding: 2rem;
+}
+
+/* Decoration form */
+/* --------------- */
+
+.decoration-box {
+  color: black;
+}
+
+.decoration-box h2,
+.add-form h3 {
+  text-align: center;
+}
+
+.decoration-box p,
+.add-form p {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.decoration-box p {
+  padding: 2rem;
+}
+
+.deco-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 4rem;
+  row-gap: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  padding: 3rem 2rem;
+}
+
+.deco-grid li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deco-list {
+  margin: 2rem;
+}
+.deco-list ul {
+  list-style: none;
+}
+.deco-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+.arrow-down {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  height: 2rem;
+  /* pour clicker sur la fleche */
+  pointer-events: none;
+}
+
+.deco-list select {
+  padding: 0.5rem 1rem;
+}
+.label {
+  font-size: 2rem;
+}
+
+.form-select {
+  padding-right: 2rem;
+  width: 20rem;
+  /* pr enlever la fleche standard et mettre notre icon */
+  appearance: none;
+}
+
+/* table */
+/* ----- */
+
+.table {
+  border-top: 2px solid black;
+  margin-top: 38%;
+  height: 11rem;
+  position: relative;
+}
+.item {
+  position: absolute;
+}
+.cake {
+  top: 0;
+  right: 50%;
+  width: 30%;
+  transform: translate(50%, -100%);
+  z-index: 99;
+}
+
+.banner {
+  top: -30%;
+  left: 0;
+  width: 100%;
+}
+
+.entertainment {
+  top: -50%;
+  left: -10%;
+  width: 15%;
+  transform: translate(50%, -100%);
+}
+.beverages {
+  top: -10%;
+  left: -3%;
+  width: 17%;
+  transform: translate(50%, -100%);
+  z-index: 9;
+}
+.sweet-bites {
+  top: -25%;
+  left: 7%;
+  width: 22%;
+  transform: translate(50%, -100%);
+}
+.salty-bites {
+  top: -23%;
+  right: 28.5%;
+  width: 21%;
+  transform: translate(50%, -100%);
+}
+.side-dishes {
+  top: -8%;
+  right: 10%;
+  width: 22%;
+  z-index: 8;
+  transform: translate(50%, -100%);
+}
+.balloons {
+  top: 0;
+  right: 5%;
+  width: 25%;
+  transform: translate(50%, -100%);
+  z-index: 7;
+}
+
+/* Shopping list form */
+/* ------------------ */
+
+.shopping-box {
+  padding: 0 1rem;
+  margin-top: 5rem;
+  grid-column: 3 / 3;
+  grid-row: 1/-1;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.add-form {
+  color: black;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.add--form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding-bottom: 2rem;
+}
+
+button,
+select,
+input {
+  color: #fff;
+  border: 1px solid #222;
+  color: #222;
+  font-family: inherit;
+  padding: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.add--form input {
+  flex: 1;
+}
+
+.add--form button {
+  text-transform: uppercase;
+  background-color: #222;
+  color: #fff;
+}
+
+.list {
+  background-color: #fff;
+  color: black;
+  padding: 4rem 0;
+  margin: 2rem 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+  position: relative;
+  border: 2px solid black;
+  background-color: #efefef7b;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+}
+.list img {
+  width: 80%;
+  position: absolute;
+  top: -3rem;
+}
+
+.list ul {
+  font-family: "Just Another Hand", cursive;
+  font-size: 1.5em;
+  letter-spacing: 1.5px;
+  list-style: none;
+  margin-top: 2rem;
+  width: 80%;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 0.5rem;
+  justify-content: center;
+  align-content: start;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+input[type="checkbox"] {
+  height: 2rem;
+  width: 2rem;
+  accent-color: black;
+}
+
+.list li button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  padding: 0.8rem;
+}
+
+.stats {
+  color: black;
+  text-align: center;
+  font-weight: 500;
+  padding: 3rem;
+  font-size: 2rem;
+  position: relative;
+}
+.stats img {
+  width: 2em;
+  margin-left: 1rem;
+  position: absolute;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.actions button {
+  background-color: black;
+  color: #fff;
+
+  letter-spacing: 1.5px;
+}
+.actions button:hover {
+  background-color: #fff;
+  color: black;
+}
+
+/* footer */
+/* ----- */
+
+.footer-signature {
+  background-color: yellow;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.copyright {
+  font-weight: 300;
+  color: #fff;
+  font-size: 1.4rem;
+  color: #222;
+  letter-spacing: 0.8px;
+  text-align: center;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-media-icon img {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+}
+
+@media screen and (max-width: 1180px) {
+  input {
+    font-size: 1.6rem;
+  }
+  .form-select {
+    width: 15rem;
+  }
+  .label {
+    font-size: 1.8rem;
+  }
+  .banner {
+    top: -22%;
+  }
+}
+@media screen and (max-width: 1031px) {
+  .container {
+    overflow: hidden;
+  }
+  .banner {
+    top: -30%;
+  }
+  select {
+    font-size: 1.6rem;
+  }
+  .form-select {
+    width: 25rem;
+  }
+  .label {
+    font-size: 2rem;
+  }
+  .app {
+    height: auto;
+  }
+  .table {
+    margin: 33% 2rem 0 2rem;
+  }
+  .app-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(90rem, auto);
+    row-gap: 3rem;
+    column-gap: 0;
+  }
+
+  .deco-section {
+    height: 100vh;
+  }
+  .shopping-box {
+    margin: 0 auto;
+    grid-column: auto;
+    grid-row: 2/3;
+    width: 50%;
+  }
+
+  .decoration-box {
+    padding: 0 2rem;
+  }
+
+  .decoration-box h2 {
+    text-align: start;
+    padding-left: 2rem;
+  }
+}
+@media screen and (max-width: 915px) {
+  .form-select {
+    width: 20rem;
+  }
+}
+@media screen and (max-width: 815px) {
+  .form-select {
+    width: 15rem;
+  }
+  .banner {
+    top: -22%;
+  }
+  .deco-grid {
+    column-gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+}
+@media screen and (max-width: 715px) {
+  .form-select {
+    width: 15rem;
+  }
+  .shopping-box {
+    width: 70%;
+  }
+  select {
+    font-size: 1.6rem;
+  }
+  .label {
+    font-size: 1.6rem;
+  }
+  .decoration-box {
+    padding: 0;
+  }
+  .footer-signature {
+    flex-direction: column;
+  }
+  .stats {
+    padding: 2rem 1rem;
+    font-size: 1.8rem;
+  }
+  .add-form {
+    padding: 0;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 630px) {
+  .decoration-box h2 {
+    font-size: 2.4rem;
+  }
+  .decoration-box p,
+  .add-form p {
+    font-size: 1.6rem;
+  }
+  .decoration-box p {
+    padding: 1rem 2rem;
+  }
+  .deco-grid {
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .logo img {
+    height: 10rem;
+    padding: 0;
+  }
+  .deco-list {
+    margin: 0 2rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  .deco-section {
+    margin-bottom: 3rem;
+  }
+  .shopping-box {
+    width: 90%;
+    margin-top: 10rem;
+  }
+
+  .logo img {
+    height: 8rem;
+    padding-right: 2rem;
+    margin: 1rem 0;
+  }
+  .deco-grid {
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
+  .table {
+    margin: 0;
+    height: 6rem;
+  }
+  .cake {
+    width: 40%;
+  }
+
+  .banner {
+    width: 120%;
+    transform: translate(-8.5%, 0);
+  }
+
+  .entertainment {
+    top: -60%;
+    left: -13%;
+    width: 20%;
+  }
+  .beverages {
+    top: -10%;
+    left: -5%;
+    width: 20%;
+  }
+  .sweet-bites {
+    top: -45%;
+    left: 4%;
+    width: 23%;
+  }
+  .salty-bites {
+    top: -45%;
+    right: 28%;
+    width: 25%;
+    transform: translate(50%, -100%);
+  }
+  .side-dishes {
+    top: -13%;
+    right: 9%;
+    width: 25%;
+  }
+  .balloons {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .logo img {
+    height: 6rem;
+  }
+  .decoration-box h2,
+  .add-form h3 {
+    font-size: 2rem;
+  }
+  .label,
+  .form-select {
+    font-size: 1.4rem;
+  }
+  select.form-select {
+    padding: 0.2rem;
+  }
+  .decoration-box p,
+  .add-form p {
+    font-size: 1.4rem;
+  }
+  .add--form input {
+    font-size: 1.4rem;
+  }
 }
