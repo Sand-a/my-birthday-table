@@ -7,7 +7,7 @@ function ShoppingList({
   items,
   onDeleteItem,
   onToggleItem,
-  haddleClearList,
+  handleClearList,
 }) {
   return (
     <div className="shopping-box">
@@ -17,7 +17,7 @@ function ShoppingList({
         items={items}
         onDeleteItem={onDeleteItem}
         onToggleItem={onToggleItem}
-        haddleClearList={haddleClearList}
+        handleClearList={handleClearList}
       />
       <Stats items={items} />
     </div>

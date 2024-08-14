@@ -26,17 +26,23 @@ function Form({ onAddItems }) {
           them to your Shopping list.
         </p>
         <div className="add--form">
-          <select
-            value={quantity}
-            onChange={(e) => setQuantity(Number(e.target.value))}
-          >
-            {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
-              <option value={num} key={num}>
-                {num}
-              </option>
-            ))}
-          </select>
-
+          <div className="add--form-quantity">
+            <select
+              value={quantity}
+              onChange={(e) => setQuantity(Number(e.target.value))}
+            >
+              {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+                <option value={num} key={num}>
+                  {num}
+                </option>
+              ))}
+            </select>
+            <img
+              className="arrow-down"
+              src="./assets/svg/chevron-down-outline.svg"
+              alt=""
+            />
+          </div>
           <input
             type="text"
             placeholder="Type your item..."

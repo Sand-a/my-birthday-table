@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Item from "./Item";
 
-function PackingList({ items, onDeleteItem, onToggleItem, haddleClearList }) {
+function PackingList({ items, onDeleteItem, onToggleItem, handleClearList }) {
   const [sortBy, setSortBy] = useState("input");
   let sortedItems;
   if (sortBy === "input") sortedItems = items;
@@ -29,18 +29,24 @@ function PackingList({ items, onDeleteItem, onToggleItem, haddleClearList }) {
         </ul>
       </div>
       <div className="actions">
-        <select
-          value={sortBy}
-          onChange={(e) => {
-            setSortBy(e.target.value);
-          }}
-        >
-          <option value="input">Initial List Input</option>
-          <option value="description">Alphabetical Order</option>
-          <option value="packed">REST To Do </option>
-        </select>
-
-        <button onClick={haddleClearList}>Clear List</button>
+        <div className="actions-selection">
+          <select
+            value={sortBy}
+            onChange={(e) => {
+              setSortBy(e.target.value);
+            }}
+          >
+            <option value="input">Initial List Input</option>
+            <option value="description">Alphabetical Order</option>
+            <option value="packed">REST To Do </option>
+          </select>
+          <img
+            className="arrow-down"
+            src="./assets/svg/chevron-down-outline.svg"
+            alt=""
+          />
+        </div>
+        <button onClick={() => handleClearList()}>Clear List</button>
       </div>
     </>
   );
